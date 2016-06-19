@@ -1,13 +1,153 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zmI-1s-eJE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start Screen View Controller-->
+        <scene sceneID="xdT-NV-EXh">
+            <objects>
+                <viewController id="ggH-hn-rDc" customClass="StartScreenViewController" customModule="PopUpGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n5o-EA-iZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="hzZ-Ns-VMk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2za-qg-tJR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bBV-03-zxE">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sb-Az-UJ5">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="268"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                        <state key="normal" title="Options">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="OptionButtonAction:" destination="ggH-hn-rDc" eventType="touchUpInside" id="fkN-tm-Lm8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H30-jF-dw2">
+                                        <rect key="frame" x="0.0" y="268" width="560" height="268"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="StartButtonAction:" destination="ggH-hn-rDc" eventType="touchUpInside" id="8zF-Ll-moC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="H30-jF-dw2" firstAttribute="height" secondItem="5Sb-Az-UJ5" secondAttribute="height" id="XLm-Aj-Cff"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bBV-03-zxE" firstAttribute="top" secondItem="n5o-EA-iZc" secondAttribute="bottom" id="A50-jx-X8O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bBV-03-zxE" secondAttribute="trailing" id="By2-jJ-VTA"/>
+                            <constraint firstItem="bBV-03-zxE" firstAttribute="leading" secondItem="2za-qg-tJR" secondAttribute="leadingMargin" id="Du1-zL-gFr"/>
+                            <constraint firstItem="hzZ-Ns-VMk" firstAttribute="top" secondItem="bBV-03-zxE" secondAttribute="bottom" id="Xon-YN-gBb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Efy-Nw-YCI"/>
+                    <connections>
+                        <outlet property="OptionsButton" destination="5Sb-Az-UJ5" id="0sJ-eQ-weQ"/>
+                        <outlet property="StartButton" destination="H30-jF-dw2" id="rrj-tZ-a7m"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="startSegue" id="Qnc-bv-vky"/>
+                        <segue destination="IyC-TJ-hql" kind="show" identifier="optionsSegue" id="Fbm-Da-GSK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7CU-M2-hdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="283"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="aLo-ES-Uf7">
+            <objects>
+                <viewController id="IyC-TJ-hql" customClass="OptionsViewController" customModule="PopUpGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zTm-1c-AOX"/>
+                        <viewControllerLayoutGuide type="bottom" id="mcd-cf-DL9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1zN-Eg-bYs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F9x-P5-cAS">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Chances" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rj8-bz-tNg">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="35"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-hZ-JOc">
+                                        <rect key="frame" x="0.0" y="35" width="560" height="267"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Pop Up Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmD-Si-nTO">
+                                        <rect key="frame" x="0.0" y="302" width="560" height="24"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9od-gq-TXl">
+                                        <rect key="frame" x="0.0" y="326" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="vky-eJ-mNh"/>
+                                        </constraints>
+                                        <state key="normal" title="Change"/>
+                                        <connections>
+                                            <action selector="imageChangeButtonAction:" destination="IyC-TJ-hql" eventType="touchUpInside" id="cqE-DR-9kT"/>
+                                        </connections>
+                                    </button>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="150" image="surprisedFace" translatesAutoresizingMaskIntoConstraints="NO" id="aio-Mc-gRu">
+                                        <rect key="frame" x="0.0" y="356" width="560" height="150"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVf-Uu-vwR">
+                                        <rect key="frame" x="0.0" y="506" width="560" height="30"/>
+                                        <state key="normal" title="Default"/>
+                                        <connections>
+                                            <action selector="defaultButtonAction:" destination="IyC-TJ-hql" eventType="touchUpInside" id="GUr-Nd-FbF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aio-Mc-gRu" firstAttribute="top" secondItem="9od-gq-TXl" secondAttribute="bottom" id="bqI-9G-hNw"/>
+                                    <constraint firstItem="9od-gq-TXl" firstAttribute="width" secondItem="fVf-Uu-vwR" secondAttribute="width" id="oKT-Uu-YYb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="F9x-P5-cAS" secondAttribute="trailing" id="SUK-1c-V4u"/>
+                            <constraint firstItem="mcd-cf-DL9" firstAttribute="top" secondItem="F9x-P5-cAS" secondAttribute="bottom" id="U2e-ad-sts"/>
+                            <constraint firstItem="F9x-P5-cAS" firstAttribute="leading" secondItem="1zN-Eg-bYs" secondAttribute="leadingMargin" id="foX-SL-U0z"/>
+                            <constraint firstItem="F9x-P5-cAS" firstAttribute="top" secondItem="zTm-1c-AOX" secondAttribute="bottom" id="ipP-WS-CX5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="numberOfChangesPicker" destination="gWu-hZ-JOc" id="Am6-gn-BYe"/>
+                        <outlet property="popUpImageChangeButton" destination="9od-gq-TXl" id="tvo-XT-nxJ"/>
+                        <outlet property="popUpImagePreview" destination="aio-Mc-gRu" id="kiz-vd-9tL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e17-3J-dA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="1097"/>
+        </scene>
+        <!--Image View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ImageViewController" customModule="PopUpGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +155,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KU8-UP-PoS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KU8-UP-PoS" secondAttribute="height" multiplier="3:4" id="nJS-qq-SvI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZI-kc-for"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KU8-UP-PoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2WR-MY-9X6"/>
+                            <constraint firstItem="KU8-UP-PoS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Caf-Gq-rWP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KU8-UP-PoS" secondAttribute="bottom" id="LG0-wT-JeR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KU8-UP-PoS" secondAttribute="trailing" id="LqG-h5-Z7k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KU8-UP-PoS" secondAttribute="trailing" id="M7U-CI-bsj"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="KU8-UP-PoS" secondAttribute="bottom" id="QGQ-xA-Pow"/>
+                            <constraint firstItem="KU8-UP-PoS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UDx-To-41i"/>
+                            <constraint firstAttribute="trailing" secondItem="KU8-UP-PoS" secondAttribute="trailing" id="WYW-nR-mh9"/>
+                            <constraint firstItem="KU8-UP-PoS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YCy-d8-7JY"/>
+                            <constraint firstItem="KU8-UP-PoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ouW-E5-BIf"/>
+                            <constraint firstAttribute="bottom" secondItem="KU8-UP-PoS" secondAttribute="bottom" id="rXl-2T-weR"/>
+                            <constraint firstItem="KU8-UP-PoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vxP-6T-2hm"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gY9-MJ-BXY"/>
+                    <connections>
+                        <outlet property="imageButton" destination="KU8-UP-PoS" id="7uk-Dj-3TF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1136" y="283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5EB-pZ-fDW">
+            <objects>
+                <navigationController id="zmI-1s-eJE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ks9-w9-6pO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ggH-hn-rDc" kind="relationship" relationship="rootViewController" id="8gS-Zd-OfU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7I-Bl-pJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="surprisedFace" width="1066" height="1600"/>
+    </resources>
+    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
