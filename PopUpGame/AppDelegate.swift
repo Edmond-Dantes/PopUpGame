@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FIRApp.configure()
+        
+        //GADMobileAds
+        
         return true
     }
 
@@ -41,6 +48,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+        print("Accessed from another application:")
+        print(url.scheme)
+        print(url.path!)
+        print(url.query!)
+        
+        print(sourceApplication!)
+        
+        if sourceApplication! == "com.apple.mobilesafari"{
+            
+            var queryDictionary:[String:String] = [:]
+            
+            let queryElements = url.query!.componentsSeparatedByString("&")
+            for element in queryElements{
+                let tempArray = element.componentsSeparatedByString("=")
+                queryDictionary[tempArray[0]] = tempArray[1]
+            }
+            
+            let state = queryDictionary["state"]!
+            let code = queryDictionary["code"]!
+            
+            print("state = \(state)")
+            print("code = \(code)")
+            
+            let body = "grant_type=authorization_code&code=\(code)&redirect_uri=\(myUrl)"
+            
+            
+            let request = NSMutableURLRequest(URL: NSURL(string: "\(tokenUrl)\(body)")!)
+            print("\(request.allHTTPHeaderFields)")
+            
+            request.allHTTPHeaderFields = ["Authorization":"Basic \(encodedString)"]
+            
+            if let accessTokenDict = serverRequestObject.httpPost(request){
+                
+                //let userId = accessTokenDict["user_id"]
+                accessToken = accessTokenDict["access_token"] as? String
+                
+            }
+            
+            
+            
+            
+        }
+        
+        return true
+    }
 
 }
 

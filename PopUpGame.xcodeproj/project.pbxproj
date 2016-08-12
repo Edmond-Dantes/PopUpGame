@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BBAA2ABFBC106E9BCF79659 /* Pods_PopUpGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF178DA392EA4F7797558EC /* Pods_PopUpGame.framework */; };
 		8528941C1D0EA2ED003A2455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528941B1D0EA2ED003A2455 /* AppDelegate.swift */; };
 		8528941E1D0EA2ED003A2455 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528941D1D0EA2ED003A2455 /* ImageViewController.swift */; };
 		852894211D0EA2ED003A2455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8528941F1D0EA2ED003A2455 /* Main.storyboard */; };
@@ -15,9 +16,14 @@
 		852894301D0EBB0F003A2455 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528942F1D0EBB0F003A2455 /* Options.swift */; };
 		852894321D0EBD92003A2455 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852894311D0EBD92003A2455 /* StartScreenViewController.swift */; };
 		852894341D0EBDC3003A2455 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852894331D0EBDC3003A2455 /* OptionsViewController.swift */; };
+		855A3BE01D56EFD2008AF847 /* OptionsSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 855A3BDF1D56EFD2008AF847 /* OptionsSettings.plist */; };
+		855A3BE81D5855C7008AF847 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 855A3BE71D5855C7008AF847 /* GoogleService-Info.plist */; };
+		8579AC521D17EB150060B3B0 /* ServerAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579AC511D17EB150060B3B0 /* ServerAuthentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CF1966314068AC6CE213FB6 /* Pods-PopUpGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopUpGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopUpGame/Pods-PopUpGame.debug.xcconfig"; sourceTree = "<group>"; };
+		1FF178DA392EA4F7797558EC /* Pods_PopUpGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopUpGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		852894181D0EA2ED003A2455 /* PopUpGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopUpGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8528941B1D0EA2ED003A2455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8528941D1D0EA2ED003A2455 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +34,10 @@
 		8528942F1D0EBB0F003A2455 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		852894311D0EBD92003A2455 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		852894331D0EBDC3003A2455 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		855A3BDF1D56EFD2008AF847 /* OptionsSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OptionsSettings.plist; sourceTree = "<group>"; };
+		855A3BE71D5855C7008AF847 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8579AC511D17EB150060B3B0 /* ServerAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerAuthentication.swift; sourceTree = "<group>"; };
+		AEE02E835EDCC31CCD98C10F /* Pods-PopUpGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopUpGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopUpGame/Pods-PopUpGame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBAA2ABFBC106E9BCF79659 /* Pods_PopUpGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F643D9EC9B57960E531FC48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CF1966314068AC6CE213FB6 /* Pods-PopUpGame.debug.xcconfig */,
+				AEE02E835EDCC31CCD98C10F /* Pods-PopUpGame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8528940F1D0EA2ED003A2455 = {
 			isa = PBXGroup;
 			children = (
 				8528941A1D0EA2ED003A2455 /* PopUpGame */,
 				852894191D0EA2ED003A2455 /* Products */,
+				7F643D9EC9B57960E531FC48 /* Pods */,
+				89B45FCEB1BD351F8DA72425 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +91,19 @@
 				852894221D0EA2ED003A2455 /* Assets.xcassets */,
 				852894241D0EA2ED003A2455 /* LaunchScreen.storyboard */,
 				852894271D0EA2ED003A2455 /* Info.plist */,
+				855A3BE71D5855C7008AF847 /* GoogleService-Info.plist */,
+				8579AC511D17EB150060B3B0 /* ServerAuthentication.swift */,
+				855A3BDF1D56EFD2008AF847 /* OptionsSettings.plist */,
 			);
 			path = PopUpGame;
+			sourceTree = "<group>";
+		};
+		89B45FCEB1BD351F8DA72425 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FF178DA392EA4F7797558EC /* Pods_PopUpGame.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8528942A1D0EA2ED003A2455 /* Build configuration list for PBXNativeTarget "PopUpGame" */;
 			buildPhases = (
+				1DD7A60DB482858042E0E4EF /* [CP] Check Pods Manifest.lock */,
 				852894141D0EA2ED003A2455 /* Sources */,
 				852894151D0EA2ED003A2455 /* Frameworks */,
 				852894161D0EA2ED003A2455 /* Resources */,
+				8A4CD27C3FA38FB8BAC57466 /* [CP] Embed Pods Frameworks */,
+				D6FE2F90FA67AD63A2394EAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,11 +170,61 @@
 			files = (
 				852894261D0EA2ED003A2455 /* LaunchScreen.storyboard in Resources */,
 				852894231D0EA2ED003A2455 /* Assets.xcassets in Resources */,
+				855A3BE81D5855C7008AF847 /* GoogleService-Info.plist in Resources */,
+				855A3BE01D56EFD2008AF847 /* OptionsSettings.plist in Resources */,
 				852894211D0EA2ED003A2455 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DD7A60DB482858042E0E4EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A4CD27C3FA38FB8BAC57466 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopUpGame/Pods-PopUpGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6FE2F90FA67AD63A2394EAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopUpGame/Pods-PopUpGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		852894141D0EA2ED003A2455 /* Sources */ = {
@@ -149,6 +235,7 @@
 				852894301D0EBB0F003A2455 /* Options.swift in Sources */,
 				8528941C1D0EA2ED003A2455 /* AppDelegate.swift in Sources */,
 				852894321D0EBD92003A2455 /* StartScreenViewController.swift in Sources */,
+				8579AC521D17EB150060B3B0 /* ServerAuthentication.swift in Sources */,
 				852894341D0EBDC3003A2455 /* OptionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,11 +349,13 @@
 		};
 		8528942B1D0EA2ED003A2455 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF1966314068AC6CE213FB6 /* Pods-PopUpGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PopUpGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edmond.PopUpGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,11 +365,13 @@
 		};
 		8528942C1D0EA2ED003A2455 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEE02E835EDCC31CCD98C10F /* Pods-PopUpGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PopUpGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edmond.PopUpGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";

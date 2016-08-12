@@ -20,10 +20,17 @@ class OptionsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     let imagePickerController = UIImagePickerController()
     
+    var pListOptionsDict:[String:AnyObject] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //print(readPropertyList())
 
+        pListOptionsDict = readPropertyList()
+        print(pListOptionsDict)
+        optionsData!.updateNumberOfChances(pListOptionsDict["chances"] as! Int)
+        
         numberOfChangesPicker.dataSource = self
         numberOfChangesPicker.delegate = self
         
@@ -34,6 +41,88 @@ class OptionsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         
         //imagePickerController.sourceType = .PhotoLibrary
         //imagePickerController.delegate = self
+        
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        var loadData:[String:AnyObject] = [:]
+        loadData["chances"] = optionsData!.getNumberofChances()
+        loadData["image"] = "baby" //change later to have the file name of the images
+        
+        loadPropertyList(loadData)
+        
+    }
+    
+    func readPropertyList()->[String:AnyObject]{
+        
+        let fileManager = NSFileManager.defaultManager()
+        
+        //var format = NSPropertyListFormat.XMLFormat_v1_0 //format of the property list
+        var plistData:[String:AnyObject] = [:]  //our data
+        
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let plistDestinationPath:String? = (documentDirectory as NSString).stringByAppendingPathComponent("OptionsSettings.plist")
+        let plistSourcePath:String? = NSBundle.mainBundle().pathForResource("OptionsSettings", ofType: "plist")!
+        
+        if !fileManager.fileExistsAtPath(plistDestinationPath!){
+            plistData = NSDictionary(contentsOfFile: plistSourcePath!) as! [String : AnyObject]
+            
+            do{
+                try fileManager.copyItemAtPath(plistSourcePath!, toPath: documentDirectory)
+            }catch{
+                print("error copying options plist from bundle to directory: \(error)")
+            }
+            
+        }else{
+            plistData = NSDictionary(contentsOfFile: plistDestinationPath!) as! [String : AnyObject]
+        }
+        
+        
+        //let plistXML = fileManager.contentsAtPath(plistPath!)!
+
+        /*
+        do{
+            plistData = try NSPropertyListSerialization.propertyListWithData(plistXML,
+                                                                             options: .MutableContainersAndLeaves,
+                                                                             format: &format)
+                as! [String:AnyObject]
+        }
+        catch{
+            print("Error reading plist: \(error), format: \(format)")
+        }
+        */
+
+        return plistData
+    }
+    
+    func loadPropertyList(propertyListData:AnyObject){
+        //let name = "OptionsSettings"
+        //let format = NSPropertyListFormat.XMLFormat_v1_0
+        //var plistData:NSData = NSData()
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let plistPath:String? = (documentDirectory as NSString).stringByAppendingPathComponent("OptionsSettings.plist")
+        
+        //let plistPath = (dir as NSString).stringByAppendingPathComponent("OptionsSettings.plist")
+       /*
+        do{
+            plistData = try NSPropertyListSerialization.dataWithPropertyList(propertyListData, format: format , options: 0)
+        }
+        catch{
+            print("Error writing to plist: \(error), format: \(format)")
+        }
+        */
+        
+        (propertyListData as! NSDictionary).writeToFile(plistPath!, atomically: true)
+        /*
+        do{
+            try plistData.writeToFile(plistPath!, options: NSDataWritingOptions.DataWritingAtomic)
+        }
+        catch{
+            print("Error writing to plist: \(error), format: \(format)")
+        }
+        */
         
     }
     
@@ -58,6 +147,13 @@ class OptionsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         optionsData!.updateNumberOfChances(row + 1)
+        /*
+        var loadData:[String:AnyObject] = [:]
+        loadData["chances"] = optionsData!.getNumberofChances()
+        loadData["image"] = "baby" //change later to have the file name of the images
+        
+        loadPropertyList(loadData)
+ */
     }
     
     
